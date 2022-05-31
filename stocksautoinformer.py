@@ -1,5 +1,6 @@
 import os
 from matplotlib import ticker
+import pandas as pd
 
 import yfinance
 PORTFOLIO = ["GPS", "KO", "AAPL", "RWT", "AEO", "T" ]
@@ -20,6 +21,11 @@ def foldercreation(listofstocknames):
         os.mkdir(stock)
 
 
+def getdividends(tickernames,tickers):
+    for i in range(len(tickers)):
+        os.chdir( tickernames[i])
+        tickers[i].dividends.to_csv()
+
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
-
+getdividends(tickernames=PORTFOLIO, tickers=tickers)
