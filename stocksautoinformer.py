@@ -1,5 +1,6 @@
 import os
-from matplotlib import ticker
+from datetime import date
+import matplotlib.pyplot as plt
 import pandas as pd
 
 import yfinance
@@ -38,7 +39,7 @@ def getdividends(tickernames,tickers):
     for i in range(len(tickers)):
         os.chdir(tickernames[i])
         df = tickers[i].dividends
-        df.to_csv("dividends"+str(tickernames[i])+".csv")
+        df.to_csv("dividends "+str(tickernames[i])+ str(date.today())+".csv")
         os.chdir("..")
 
 foldercreation(PORTFOLIO)
