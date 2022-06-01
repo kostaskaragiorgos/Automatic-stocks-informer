@@ -24,7 +24,8 @@ def foldercreation(listofstocknames):
         listofstocknames: a list of stock names
     """
     for stock in listofstocknames:
-        os.mkdir(stock)
+        if not os.path.exists(stock):
+            os.mkdir(stock)
 
 
 def getdividends(tickernames,tickers):
