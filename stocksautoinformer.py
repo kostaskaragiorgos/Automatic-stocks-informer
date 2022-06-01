@@ -3,6 +3,7 @@ from datetime import date
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 import yfinance
 PORTFOLIO = ["GPS", "KO", "AAPL", "RWT", "AEO", "T" ]
 
@@ -41,6 +42,15 @@ def getdividends(tickernames,tickers):
         df = tickers[i].dividends
         df.to_csv("dividends "+str(tickernames[i])+ str(date.today())+".csv")
         os.chdir("..")
+
+
+def get_info(ticker, typeofinfo, allinfo=False):
+    if allinfo:
+        return ticker.info
+    return ticker.info.get(str(typeofinfo))
+
+
+
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
