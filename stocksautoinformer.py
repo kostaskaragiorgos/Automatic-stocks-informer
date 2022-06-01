@@ -6,6 +6,12 @@ import yfinance
 PORTFOLIO = ["GPS", "KO", "AAPL", "RWT", "AEO", "T" ]
 
 def getlistoftickers(listofstocknames):
+    """saves Ticker objects to a list
+    Args:
+        listofstocknames: a list of stock names
+    Returns:
+        yfobjects: a list of Ticker objects
+    """
     yfobjects = []
     for stock in listofstocknames:
         yfobjects.append(yfinance.Ticker(stock))
@@ -23,8 +29,10 @@ def foldercreation(listofstocknames):
 
 def getdividends(tickernames,tickers):
     for i in range(len(tickers)):
-        os.chdir( tickernames[i])
-        tickers[i].dividends.to_csv()
+        os.chdir(tickernames[i])
+        df = tickers[i].dividends
+        df.to_csv("dividends"+str(tickernames[i])+".csv")
+        os.chdir("..")
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
