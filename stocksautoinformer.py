@@ -2,6 +2,7 @@ import os
 from datetime import date
 import matplotlib.pyplot as plt
 import pandas as pd
+import csv
 
 
 import yfinance
@@ -49,9 +50,16 @@ def get_info(ticker, typeofinfo, allinfo=False):
         return ticker.info
     return ticker.info.get(str(typeofinfo))
 
-
+def saveinfotocsv(tickernames, tickers, typeofinfo= "", allinfo=False):
+    if allinfo:
+        for i in range(len(tickers)):
+            os.chdir(tickernames[i])
+            df = pd.DataFrame.from_dict(tickers[i].info, orient='index')
+            df.to_csv("info "+str(tickernames[i])+ str(date.today())+".csv")
+            os.chdir("..")
 
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
 getdividends(tickernames=PORTFOLIO, tickers=tickers)
+saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
