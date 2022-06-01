@@ -28,6 +28,12 @@ def foldercreation(listofstocknames):
 
 
 def getdividends(tickernames,tickers):
+    """saves a dividends.csv file for each ticker.
+    Args:
+        tickernames: a list with the names of tickers
+        tickers: a list with ticker objects
+
+    """
     for i in range(len(tickers)):
         os.chdir(tickernames[i])
         df = tickers[i].dividends
