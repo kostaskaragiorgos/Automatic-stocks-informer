@@ -58,8 +58,18 @@ def saveinfotocsv(tickernames, tickers, typeofinfo= "", allinfo=False):
             df.to_csv("info "+str(tickernames[i])+ str(date.today())+".csv")
             os.chdir("..")
 
+def saveplot(tickernames, tickers,type, infotoplot):
+    for i in range(len(tickers)):
+        os.chdir(tickernames[i])
+        df = getattr(tickers[i], infotoplot)
+        df.plot(kind=type)
+        plt.savefig(str(infotoplot)+" of " + str(tickernames[i]+".png"))
+        os.chdir("..")
+
+
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
 getdividends(tickernames=PORTFOLIO, tickers=tickers)
 saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
+saveplot(PORTFOLIO, tickers, "bar", 'quarterly_earnings')
