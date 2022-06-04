@@ -15,10 +15,13 @@ class Portfolio():
     
     def delete_stock(self, nameofthestock):
         self.tickers.pop(nameofthestock)
+    
+    def get_stock(self, nameofthestock):
+        return self.tickers[nameofthestock]
+
 
     def show_portfolio(self):
         print("PORTFOLIO: " + self.getname() +"\n")
         for key, value in self.tickers.items():
             print(key, ':', value)
-
 
