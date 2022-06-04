@@ -10,9 +10,15 @@ class Portfolio():
     def getname(self):
         return self.name
     
-    def add_ticker(self, nameofthestock, tickerofthestock):
+    def add_stock(self, nameofthestock, tickerofthestock):
         self.tickers = {nameofthestock: yf.Ticker(tickerofthestock)}
     
+    def delete_stock(self, nameofthestock):
+        self.tickers.pop(nameofthestock)
 
+    def show_portfolio(self):
+        print("PORTFOLIO: " + self.getname() +"\n")
+        for key, value in self.tickers.items():
+            print(key, ':', value)
 
 
