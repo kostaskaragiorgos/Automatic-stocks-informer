@@ -3,11 +3,12 @@ import sys
 
  
 from portfolio import Portfolio
+from stock import Stock
+
  
  
  
 class PortfolioCreator:
-
     def __init__(self):
         self.p = Portfolio()
 
@@ -19,8 +20,10 @@ class PortfolioCreator:
             "2" : self.add_stock,
     
             "3" : self.delete_stock,
-    
-            "4" : self.quit
+
+            "4" : self.show_portfolio,
+
+            "5" : self.quit,
     
             }
     
@@ -43,8 +46,10 @@ class PortfolioCreator:
                 2. Add stock
     
                 3. Delete stock
+
+                4. Show portfolio
     
-                4. Quit program
+                5. Quit program
     
                 """)
     
@@ -83,11 +88,15 @@ class PortfolioCreator:
     def add_stock(self):
         name = input("Enter the name of the stock")
         ticker = input("Enter the ticker of the stock")
-        self.p.add_stock(name, ticker)
+       
+        self.p.add_stock(Stock(name, ticker))
     
     def delete_stock(self):
         name = input("Enter the name of the stock")
         self.p.delete_stock(name)
+    
+    def show_portfolio(self):
+        self.p.print_portfolio()
     
     def quit(self):
         sys.exit(0)
