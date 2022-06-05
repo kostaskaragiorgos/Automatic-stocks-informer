@@ -3,8 +3,8 @@ import yfinance as yf
 from stock import Stock
 
 class Portfolio():
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        self.name = "Test"
         self.stocks = []
 
     def setname(self, name):
@@ -12,7 +12,7 @@ class Portfolio():
     
     def getname(self):
         return self.name
-    
+
     def add_stock(self, stock):
         self.stocks.append(stock)
 
@@ -23,7 +23,7 @@ class Portfolio():
                 self.stocks.remove(i)
 
 
-    def show_portfolio(self):
+    def print_portfolio(self):
         print("PORTFOLIO: " + self.getname() +"\n")
         for i in self.stocks:
             print(i.getname())
