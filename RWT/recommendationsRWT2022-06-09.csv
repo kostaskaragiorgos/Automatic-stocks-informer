@@ -1,76 +1,74 @@
 Date,Firm,To Grade,From Grade,Action
-2012-04-02,Bank oferica,Neutral,,up
-2012-05-07,Bank of America,Neutral,,main
-2012-05-15,Deutsche Bank,Buy,,main
-2012-08-06,Wunderlich,Buy,Hold,up
-2012-08-10,Jefferies,Buy,,main
-2012-08-13,Deutsche Bank,Buy,,main
-2012-10-23,Maxim Group,Buy,,init
-2012-10-31,Jefferies,Buy,,main
-2012-11-02,Bank of America,Neutral,,main
-2012-11-05,Deutsche Bank,Buy,,main
-2013-01-08,Jefferies,Buy,,main
-2013-01-24,JMP Securities,Market Perform,Outperform,down
-2013-02-22,Deutsche Bank,Buy,,main
-2013-02-25,Wunderlich,Buy,,main
-2013-03-04,JMP Securities,Outperform,Market Perform,up
-2013-03-07,Jefferies,Buy,,main
-2013-06-25,Wunderlich,Hold,Buy,down
-2013-08-12,Wunderlich,Hold,,main
-2013-10-03,Wells Fargo,Market Perform,Outperform,down
-2013-10-07,FBR Capital,Market Perform,Outperform,down
-2013-10-15,UBS,Buy,,init
-2014-03-03,Wunderlich,Hold,,main
-2014-03-06,Jefferies,Hold,,down
-2014-03-06,Jefferies,Hold,Buy,down
-2014-05-05,JMP Securities,Market Perform,Market Outperform,down
-2014-08-11,Deutsche Bank,Buy,,main
-2014-11-10,Deutsche Bank,Buy,,main
-2014-11-10,Keefe Bruyette & Woods,Market Perform,,main
-2015-01-30,Nomura,Buy,,init
-2015-02-24,Deutsche Bank,Buy,,main
-2015-03-13,Keefe Bruyette & Woods,Outperform,Market Perform,up
-2015-05-06,Deutsche Bank,Buy,,main
-2015-05-07,Keefe Bruyette & Woods,Outperform,,main
-2015-08-10,Keefe Bruyette & Woods,Outperform,,main
-2015-11-09,Deutsche Bank,Buy,,main
-2015-11-24,Nomura,Neutral,Buy,down
-2016-02-29,Keefe Bruyette & Woods,Outperform,,main
-2016-03-14,Deutsche Bank,Buy,,main
-2016-05-13,Deutsche Bank,Buy,,main
-2016-05-18,Nomura,Buy,Neutral,up
-2016-07-19,Keefe Bruyette & Woods,Market Perform,Outperform,down
-2017-11-08,Deutsche Bank,Buy,,main
-2017-12-08,Keefe Bruyette & Woods,Outperform,Market Perform,up
-2018-05-08,Deutsche Bank,Buy,Buy,main
-2018-07-24,Compass Point,Neutral,,init
-2018-10-12,Raymond James,Outperform,,init
-2019-02-05,Credit Suisse,Outperform,,init
-2019-03-04,JMP Securities,Market Outperform,Market Perform,up
-2019-03-27,Nomura,Buy,,init
-2019-08-13,Nomura,Buy,,main
-2020-03-23,JMP Securities,Outperform,Market Perform,up
-2020-04-03,JMP Securities,Market Outperform,,main
-2020-05-26,Raymond James,Outperform,,main
-2020-06-08,Credit Suisse,Outperform,,main
-2020-06-12,Raymond James,Outperform,,main
-2020-08-11,Raymond James,Strong Buy,Outperform,up
-2020-09-21,Credit Suisse,Outperform,,main
-2020-10-23,JMP Securities,Market Outperform,Market Perform,up
-2020-10-30,Raymond James,Strong Buy,,main
-2020-11-05,Piper Sandler,Neutral,,main
-2020-11-24,BTIG,Buy,,init
-2020-12-18,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
-2021-02-11,Raymond James,Strong Buy,,main
-2021-03-16,Credit Suisse,Outperform,,main
-2021-04-30,Raymond James,Strong Buy,,main
-2021-06-24,JMP Securities,Market Outperform,,main
-2021-07-19,Piper Sandler,Overweight,Neutral,up
-2021-07-29,Raymond James,Strong Buy,,main
-2021-09-13,Credit Suisse,Outperform,,main
-2021-10-28,Raymond James,Strong Buy,,main
-2021-11-01,Wells Fargo,Equal-Weight,,init
-2022-02-28,Credit Suisse,Outperform,,main
-2022-04-05,Piper Sandler,Overweight,,main
-2022-05-04,Raymond James,Strong Buy,,main
-2022-05-13,JP Morgan,Overweight,,init
+2012-04-02 06:16:00,Bank oferica,Neutral,,up
+2012-05-07 12:32:00,Bank of America,Neutral,,main
+2012-05-15 06:17:00,Deutsche Bank,Buy,,main
+2012-08-06 05:47:00,Wunderlich,Buy,Hold,up
+2012-08-10 06:28:00,Jefferies,Buy,,main
+2012-08-13 06:46:00,Deutsche Bank,Buy,,main
+2012-10-23 09:13:00,Maxim Group,Buy,,init
+2012-10-31 08:16:00,Jefferies,Buy,,main
+2012-11-02 15:33:00,Bank of America,Neutral,,main
+2012-11-05 07:58:00,Deutsche Bank,Buy,,main
+2013-01-08 08:32:59,Jefferies,Buy,,main
+2013-01-24 08:29:17,JMP Securities,Market Perform,Outperform,down
+2013-02-22 08:04:01,Deutsche Bank,Buy,,main
+2013-02-25 06:26:39,Wunderlich,Buy,,main
+2013-03-04 07:56:00,JMP Securities,Outperform,Market Perform,up
+2013-03-07 07:44:54,Jefferies,Buy,,main
+2013-06-25 07:42:08,Wunderlich,Hold,Buy,down
+2013-08-12 08:00:42,Wunderlich,Hold,,main
+2013-10-03 16:00:00,Wells Fargo,Market Perform,Outperform,down
+2013-10-07 16:00:00,FBR Capital,Market Perform,Outperform,down
+2013-10-15 06:53:49,UBS,Buy,,init
+2014-03-03 06:23:43,Wunderlich,Hold,,main
+2014-03-06 08:00:00,Jefferies,Hold,,down
+2014-05-05 16:00:00,JMP Securities,Market Perform,Market Outperform,down
+2014-08-11 09:00:00,Deutsche Bank,Buy,,main
+2014-11-10 09:00:00,Keefe Bruyette & Woods,Market Perform,,main
+2015-01-30 05:58:41,Nomura,Buy,,init
+2015-02-24 09:00:00,Deutsche Bank,Buy,,main
+2015-03-13 07:20:44,Keefe Bruyette & Woods,Outperform,Market Perform,up
+2015-05-06 09:00:00,Deutsche Bank,Buy,,main
+2015-05-07 09:00:00,Keefe Bruyette & Woods,Outperform,,main
+2015-08-10 11:00:00,Keefe Bruyette & Woods,Outperform,,main
+2015-11-09 09:31:33,Deutsche Bank,Buy,,main
+2015-11-24 05:17:37,Nomura,Neutral,Buy,down
+2016-02-29 13:25:41,Keefe Bruyette & Woods,Outperform,,main
+2016-03-14 13:44:17,Deutsche Bank,Buy,,main
+2016-05-13 12:46:19,Deutsche Bank,Buy,,main
+2016-05-18 07:02:25,Nomura,Buy,Neutral,up
+2016-07-19 03:26:23,Keefe Bruyette & Woods,Market Perform,Outperform,down
+2017-11-08 13:53:33,Deutsche Bank,Buy,,main
+2017-12-08 13:55:58,Keefe Bruyette & Woods,Outperform,Market Perform,up
+2018-05-08 12:10:20,Deutsche Bank,Buy,Buy,main
+2018-07-24 10:20:52,Compass Point,Neutral,,init
+2018-10-12 13:04:23,Raymond James,Outperform,,init
+2019-02-05 13:27:09,Credit Suisse,Outperform,,init
+2019-03-04 11:29:36,JMP Securities,Market Outperform,Market Perform,up
+2019-03-27 11:05:29,Nomura,Buy,,init
+2019-08-13 14:02:39,Nomura,Buy,,main
+2020-03-23 10:38:55,JMP Securities,Outperform,Market Perform,up
+2020-04-03 21:40:32,JMP Securities,Market Outperform,,main
+2020-05-26 11:16:14,Raymond James,Outperform,,main
+2020-06-08 12:44:33,Credit Suisse,Outperform,,main
+2020-06-12 11:38:24,Raymond James,Outperform,,main
+2020-08-11 11:49:36,Raymond James,Strong Buy,Outperform,up
+2020-09-21 13:11:44,Credit Suisse,Outperform,,main
+2020-10-23 10:18:54,JMP Securities,Market Outperform,Market Perform,up
+2020-10-30 12:03:26,Raymond James,Strong Buy,,main
+2020-11-05 14:53:42,Piper Sandler,Neutral,,main
+2020-11-24 11:32:19,BTIG,Buy,,init
+2020-12-18 12:50:18,"Keefe, Bruyette & Woods",Outperform,Market Perform,up
+2021-02-11 12:37:40,Raymond James,Strong Buy,,main
+2021-03-16 13:28:09,Credit Suisse,Outperform,,main
+2021-04-30 12:24:07,Raymond James,Strong Buy,,main
+2021-06-24 11:00:10,JMP Securities,Market Outperform,,main
+2021-07-19 08:58:40,Piper Sandler,Overweight,Neutral,up
+2021-07-29 12:24:10,Raymond James,Strong Buy,,main
+2021-09-13 11:10:00,Credit Suisse,Outperform,,main
+2021-10-28 11:46:10,Raymond James,Strong Buy,,main
+2021-11-01 10:54:31,Wells Fargo,Equal-Weight,,init
+2022-02-28 15:42:22,Credit Suisse,Outperform,,main
+2022-04-05 13:21:18,Piper Sandler,Overweight,,main
+2022-05-04 12:50:28,Raymond James,Strong Buy,,main
+2022-05-13 10:04:41,JP Morgan,Overweight,,init
