@@ -12,8 +12,7 @@ from stock import Stock
 class PortfolioCreator:
     def __init__(self):
         self.p = Portfolio()
-
-    
+        self.isloaded= False
         self.choices = {
     
             "1" : self.create_portfolio,
@@ -81,19 +80,17 @@ class PortfolioCreator:
 
     
     def create_portfolio(self):
-    
-        ''' Add a new diary in the diarybook '''
-    
-    
-    
         name = input("Enter the name of the portfolio" )
+        self.p = Portfolio()
         self.p.setname(name)
     
     def add_stock(self):
         name = input("Enter the name of the stock")
         ticker = input("Enter the ticker of the stock")
-       
-        self.p.add_stock(Stock(name, ticker))
+        stock = Stock(name, ticker=ticker)
+        self.p.add_stock(stock)
+
+
     
     def delete_stock(self):
         name = input("Enter the name of the stock")
@@ -108,9 +105,13 @@ class PortfolioCreator:
         sys.exit(0)
     
     def load_portfolio(self):
-        name = input("Enter the name of the portfolio")
-        file = open(name, 'rb')
-        self.p = pickle.load(file)
-        file.close()
+        name = input("Enter the name of the portfolio file")
+        try:
+            file = open(name, 'rb')
+            self.p = pickle.load(file)
+            file.close()
+            self.isloaded = True
+        except:
+            print("There is no such portfolio")
     
     
