@@ -30,21 +30,6 @@ def foldercreation(listofstocknames):
         if not os.path.exists(stock):
             os.mkdir(stock)
 
-
-def getdividends(tickernames,tickers):
-    """saves a dividends.csv file for each ticker.
-    Args:
-        tickernames: a list with the names of tickers
-        tickers: a list with ticker objects
-
-    """
-    for i in range(len(tickers)):
-        os.chdir(tickernames[i])
-        df = tickers[i].dividends
-        df.to_csv("dividends "+str(tickernames[i])+ str(date.today())+".csv")
-        os.chdir("..")
-
-
 def get_info(ticker, typeofinfo, allinfo=False):
     if allinfo:
         return ticker.info
@@ -72,7 +57,7 @@ def saveplot(tickernames, tickers,type, infotoplot):
         for j in range(len(infotoplot)):
             df = getattr(tickers[i], infotoplot[j])
             df.plot(kind=type)
-            plt.savefig(str(infotoplot[j])+" of " + str(tickernames[i]+".png"))
+            plt.savefig(str(infotoplot[j])+" of " + str(tickernames[i])+".png")
         os.chdir("..")
 
 numeric_indicators = ['quarterly_earnings', 'earnings']
@@ -80,7 +65,6 @@ musthaveinfo = ['recommendations','cashflow', 'balance_sheet', 'quarterly_balanc
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
-getdividends(tickernames=PORTFOLIO, tickers=tickers)
 saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
 saveplot(PORTFOLIO, tickers, "bar", numeric_indicators)
 saveinfotocsv(tickernames= PORTFOLIO, tickers=tickers, typeofinfo= musthaveinfo, allinfo=False)
