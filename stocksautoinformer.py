@@ -51,26 +51,34 @@ def get_info(ticker, typeofinfo, allinfo=False):
     return ticker.info.get(str(typeofinfo))
 
 def saveinfotocsv(tickernames, tickers, typeofinfo= "", allinfo=False):
-    if allinfo:
-        for i in range(len(tickers)):
-            os.chdir(tickernames[i])
+    for i in range(len(tickers)):
+        os.chdir(tickernames[i])
+        if allinfo:
             df = pd.DataFrame.from_dict(tickers[i].info, orient='index')
             df.to_csv("info "+str(tickernames[i])+ str(date.today())+".csv")
-            os.chdir("..")
+            
+        else:
+            df = getattr(tickers[i], typeofinfo)
+            df.to_csv(str(typeofinfo)+str(tickernames[i])+ str(date.today())+".csv")
+
+        os.chdir("..")
+
+
 
 def saveplot(tickernames, tickers,type, infotoplot):
     for i in range(len(tickers)):
         os.chdir(tickernames[i])
         for j in range(len(infotoplot)):
-            df = getattr(tickers[i], infotoplot)
+            df = getattr(tickers[i], infotoplot[j])
             df.plot(kind=type)
-            plt.savefig(str(infotoplot)+" of " + str(tickernames[i]+".png"))
+            plt.savefig(str(infotoplot[j])+" of " + str(tickernames[i]+".png"))
         os.chdir("..")
 
-numeric_indicators = ['uarterly_earnings', 'earnings']
+numeric_indicators = ['quarterly_earnings', 'earnings', 'dividends']
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
 getdividends(tickernames=PORTFOLIO, tickers=tickers)
 saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
 saveplot(PORTFOLIO, tickers, "bar", numeric_indicators)
+saveinfotocsv(tickernames= PORTFOLIO, tickers=tickers, typeofinfo= "recommendations", allinfo=False)
