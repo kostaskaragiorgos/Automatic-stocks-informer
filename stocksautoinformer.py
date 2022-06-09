@@ -58,8 +58,9 @@ def saveinfotocsv(tickernames, tickers, typeofinfo= "", allinfo=False):
             df.to_csv("info "+str(tickernames[i])+ str(date.today())+".csv")
             
         else:
-            df = getattr(tickers[i], typeofinfo)
-            df.to_csv(str(typeofinfo)+str(tickernames[i])+ str(date.today())+".csv")
+            for j in range(len(typeofinfo)):
+                df = getattr(tickers[i], typeofinfo[j])
+                df.to_csv(str(typeofinfo[j])+str(tickernames[i])+ str(date.today())+".csv")
 
         os.chdir("..")
 
@@ -74,11 +75,12 @@ def saveplot(tickernames, tickers,type, infotoplot):
             plt.savefig(str(infotoplot[j])+" of " + str(tickernames[i]+".png"))
         os.chdir("..")
 
-numeric_indicators = ['quarterly_earnings', 'earnings', 'dividends']
+numeric_indicators = ['quarterly_earnings', 'earnings']
+musthaveinfo = ['recommendations','cashflow', 'balance_sheet', 'quarterly_balance_sheet', 'quarterly_cashflow','dividends', 'financials', 'quarterly_financials']
 
 foldercreation(PORTFOLIO)
 tickers = getlistoftickers(PORTFOLIO)
 getdividends(tickernames=PORTFOLIO, tickers=tickers)
 saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
 saveplot(PORTFOLIO, tickers, "bar", numeric_indicators)
-saveinfotocsv(tickernames= PORTFOLIO, tickers=tickers, typeofinfo= "recommendations", allinfo=False)
+saveinfotocsv(tickernames= PORTFOLIO, tickers=tickers, typeofinfo= musthaveinfo, allinfo=False)
