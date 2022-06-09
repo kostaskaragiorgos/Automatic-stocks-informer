@@ -1,5 +1,6 @@
 
 import sys
+import pickle
 
  
 from portfolio import Portfolio
@@ -16,15 +17,16 @@ class PortfolioCreator:
         self.choices = {
     
             "1" : self.create_portfolio,
-    
-            "2" : self.add_stock,
-    
-            "3" : self.delete_stock,
 
-            "4" : self.show_portfolio,
-
-            "5" : self.quit,
+            "2" : self.load_portfolio,
     
+            "3" : self.add_stock,
+    
+            "4" : self.delete_stock,
+
+            "5" : self.show_portfolio,
+
+            "6" : self.quit,
             }
     
     
@@ -42,14 +44,16 @@ class PortfolioCreator:
     
     
                 1. Create Portfolio
-    
-                2. Add stock
-    
-                3. Delete stock
 
-                4. Show portfolio
+                2. Load Portfolio
     
-                5. Quit program
+                3. Add stock
+    
+                4. Delete stock
+
+                5. Show portfolio
+    
+                6. Quit program
     
                 """)
     
@@ -99,6 +103,14 @@ class PortfolioCreator:
         self.p.print_portfolio()
     
     def quit(self):
+        file = open(self.p.getname(), 'wb')
+        pickle.dump(self.p , file)
         sys.exit(0)
+    
+    def load_portfolio(self):
+        name = input("Enter the name of the portfolio")
+        file = open(name, 'rb')
+        self.p = pickle.load(file)
+        file.close()
     
     
