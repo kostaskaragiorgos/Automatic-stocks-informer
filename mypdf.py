@@ -11,3 +11,8 @@ class PDF(FPDF):
         self.set_font('Arial',size=10)
         self.write(5,text)
         self.ln(10)
+    
+    def add_image(self, image_name):
+        self.image(image_name)
+        self.ln(10)
+    
