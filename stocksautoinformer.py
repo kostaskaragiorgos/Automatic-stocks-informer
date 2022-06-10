@@ -1,6 +1,5 @@
 import os
 from datetime import date
-from matplotlib import ticker
 import matplotlib.pyplot as plt
 import pandas as pd
 import csv
@@ -64,12 +63,25 @@ def saveplot(tickernames, tickers,type, infotoplot):
 
 def createpdf(tickernames, tickers):
     for i in range(len(tickernames)):
-        os.chdir(tickernames[i])
         pdf = mypdf.PDF()
         pdf.add_page()
         pdf.set_title(str(tickernames[i]))
-        pdf.output(str(tickernames[i])+'.pdf', 'F')
+        os.chdir(tickernames[i])
+        stockfiles = os.listdir(os.getcwd())
+        for j in stockfiles:
+            if ".py" in j or ".pdf" in j or "info" in j:
+                continue
+            elif ".csv" in j:
+                pdf.add_text(str(j[0:-14]))
+                pdf.add_csvfile(str(j))
+            else:
+                pdf.add_text(str(j[0:-4]))
+                pdf.add_image(str(j))
+        pdf.output(str(tickernames[i])+".pdf", 'F')
         os.chdir("..")
+
+
+
 
 numeric_indicators = ['quarterly_earnings', 'earnings']
 musthaveinfo = ['recommendations','cashflow', 'balance_sheet', 'quarterly_balance_sheet', 'quarterly_cashflow','dividends', 'financials', 'quarterly_financials']
