@@ -1,8 +1,10 @@
 import os
 from datetime import date
+from matplotlib import ticker
 import matplotlib.pyplot as plt
 import pandas as pd
 import csv
+import mypdf
 
 
 import yfinance
@@ -60,6 +62,15 @@ def saveplot(tickernames, tickers,type, infotoplot):
             plt.savefig(str(infotoplot[j])+" of " + str(tickernames[i])+".png")
         os.chdir("..")
 
+def createpdf(tickernames, tickers):
+    for i in range(len(tickernames)):
+        os.chdir(tickernames[i])
+        pdf = mypdf.PDF()
+        pdf.add_page()
+        pdf.set_title(str(tickernames[i]))
+        pdf.output(str(tickernames[i])+'.pdf', 'F')
+        os.chdir("..")
+
 numeric_indicators = ['quarterly_earnings', 'earnings']
 musthaveinfo = ['recommendations','cashflow', 'balance_sheet', 'quarterly_balance_sheet', 'quarterly_cashflow','dividends', 'financials', 'quarterly_financials']
 
@@ -68,3 +79,4 @@ tickers = getlistoftickers(PORTFOLIO)
 saveinfotocsv(tickernames=PORTFOLIO, tickers=tickers, allinfo=True)
 saveplot(PORTFOLIO, tickers, "bar", numeric_indicators)
 saveinfotocsv(tickernames= PORTFOLIO, tickers=tickers, typeofinfo= musthaveinfo, allinfo=False)
+createpdf(tickernames=PORTFOLIO, tickers=tickers)
