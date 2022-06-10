@@ -17,7 +17,7 @@ class PDF(FPDF):
         self.ln(10)
     
     def add_csvfile(self, csv_file_name):
-        page_width = self.w - 2 * pdf.l_margin
+        page_width = self.w - 2 * self.l_margin
         col_width = page_width/4
         th = 14
         with open(csv_file_name) as f:
