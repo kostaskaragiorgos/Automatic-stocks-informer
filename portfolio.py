@@ -10,6 +10,9 @@ class Portfolio():
     def setname(self, name):
         self.name = name
     
+    def getname(self):
+        return self.name
+
     def getstocks(self):
         return self.stocks
     
