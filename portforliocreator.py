@@ -1,14 +1,12 @@
 
 import sys
-import pickle
-
- 
+import logging
+import pickle 
 from portfolio import Portfolio
 from stock import Stock
 
- 
- 
- 
+logging.basicConfig(filename='portfoliolog.log', format='%(levelname)s %(asctime)s %(message)s %', level=logging.DEBUG)
+
 class PortfolioCreator:
     def __init__(self):
         self.p = Portfolio()
