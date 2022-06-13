@@ -10,6 +10,9 @@ class Portfolio():
     def setname(self, name):
         self.name = name
     
+    def getstocks(self):
+        return self.stocks
+    
     def getname(self):
         return self.name
 
@@ -17,7 +20,6 @@ class Portfolio():
         self.stocks.append(stock)
 
     def delete_stock(self, nameofthestock):
-
         for i in self.stocks:
             if nameofthestock == i.getname():
                 self.stocks.remove(i)
