@@ -5,7 +5,7 @@ import pickle
 from portfolio import Portfolio
 from stock import Stock
 
-logging.basicConfig(filename='portfoliolog.log', format='%(levelname)s %(asctime)s %(message)s %', level=logging.DEBUG)
+logging.basicConfig(filename='portfoliolog.log', format='%(levelname)s %(asctime)s %(message)s', level=logging.DEBUG)
 
 class PortfolioCreator:
     def __init__(self):
@@ -81,6 +81,7 @@ class PortfolioCreator:
         name = input("Enter the name of the portfolio" )
         self.p = Portfolio()
         self.p.setname(name)
+        logging.info("Portfolio " + str(self.p.getname()) +" have been created")
     
     def add_stock(self):
         name = input("Enter the name of the stock")
